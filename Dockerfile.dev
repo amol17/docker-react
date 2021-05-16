@@ -1,0 +1,7 @@
+FROM node:alpine
+RUN npm set strict-ssl false
+WORKDIR '/app'
+COPY package.json .
+RUN npm install
+COPY . .
+CMD ["npm","run","start"]
